@@ -94,7 +94,7 @@ mysql_password="1234"
 mysql_db="siswa"
 
 # Menggunakan mysql -u dengan path lengkap jika perlu
-/usr/bin/mysql -h "$mysql_host" -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_1 = '$total' WHERE id = '$student_id';"
+docker exec -it my-mysql mysql -h "$mysql_host" -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_1 = '$total' WHERE id = '$student_id';"
 
 if [ $? -eq 0 ]; then
     echo "Score updated successfully in the database."
