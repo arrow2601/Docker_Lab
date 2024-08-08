@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Fungsi untuk memverifikasi apakah perintah yang diberikan sesuai dengan jawaban yang benar
+docker load < mysql.tar
+docker run -d --name my-mysql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 mysql
 check_command() {
     task_name=$1
     instruction=$2
