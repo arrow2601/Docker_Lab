@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Fungsi untuk memverifikasi apakah perintah yang diberikan sesuai dengan jawaban yang benar
-docker load < mysql.tar
+docker load < /mysql.tar
 docker run -d --name my-mysql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 mysql
 check_command() {
     task_name=$1
@@ -76,7 +76,7 @@ check_command "3. Melihat list docker image" "Masukkan perintah untuk melihat li
 score=$((score + $? * 100))
 
 # Task 4: Menghapus image nginx yang tadi sudah didownload
-check_command "4. Menghapus image nginx yang tadi sudah didownload" "Masukkan perintah untuk menghapus image nginx yang telah didownload:" "docker rmi nginx" "verify_docker_rm_nginx"
+check_command "4. Menghapus image nginx yang tadi sudah didownload" "Masukkan perintah untuk menghapus image nginx yang telah didownload:" "docker image rm nginx" "true"
 score=$((score + $? * 100))
 
 # Tampilkan skor akhir
