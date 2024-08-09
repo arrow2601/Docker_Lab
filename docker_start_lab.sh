@@ -4,6 +4,7 @@
 start_lab_1() {
     echo "Starting Lab"
     docker run -dit --name dockerlab rehan26/dockerlab
+    docker exec -it dockerlab /bin/sh
     echo "Lab I environment started with container name lab1_env"
 }
 # Memulai lab berdasarkan argumen yang diberikan
