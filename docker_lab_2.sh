@@ -13,7 +13,7 @@ check_command() {
     read -p "Masukkan perintah: " user_command
 
     if [ "$user_command" == "$expected_command" ]; then
-        eval "$user_command" | tee output.log
+        eval "$user_command" > output.log
         command_status=$?
         if [ $command_status -eq 0 ]; then
             $verify_function
