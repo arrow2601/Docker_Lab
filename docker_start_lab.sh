@@ -12,4 +12,4 @@ start_lab_1() {
 }
 # Memulai lab berdasarkan argumen yang diberikan
 start_lab_1
-bash dockerlabfinish.sh
+bash dockerlab_finish.sh
