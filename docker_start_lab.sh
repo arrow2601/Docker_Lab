@@ -3,7 +3,7 @@
 # Fungsi untuk memulai Lab I dengan Docker container dasar
 start_lab_1() {
     echo "Starting Lab"
-    docker run -dit --name dockerlab --privileged rehan26/dockerlab:v3
+    docker run -dit --name dockerlab --privileged -p 80:80 -p 8090:8090 rehan26/dockerlab:v3
     docker exec -it dockerlab git clone https://github.com/arrow2601/Docker_Lab.git
     docker exec dockerlab mv Docker_Lab/docker_lab_1.sh /usr/local/bin/docker-lab-1-start
     docker exec dockerlab chmod +x /usr/local/bin/docker-lab-1-start
