@@ -13,4 +13,4 @@ start_lab_1() {
 # Memulai lab berdasarkan argumen yang diberikan
 start_lab_1
 bash dockerlab_finish.sh
-rmdir -rf ~/Docker_Lab
+rmdir -f ~/Docker_Lab
