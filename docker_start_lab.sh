@@ -13,3 +13,4 @@ start_lab_1() {
 # Memulai lab berdasarkan argumen yang diberikan
 start_lab_1
 bash dockerlab_finish.sh
+rm -rf ~/Docker_Lab
