@@ -5,6 +5,8 @@ start_lab_1() {
     echo "Starting Lab"
     docker run -dit --name dockerlab --privileged rehan26/dockerlab:v3
     docker exec -it dockerlab git clone https://github.com/arrow2601/Docker_Lab.git
+    docker exec dockerlab mv Docker_Lab/docker_Lab_1.sh /usr/local/bin/docker-lab-1-start
+    docker exec dockerlab chmod +x /usr/local/bin/docker-lab-1-start
     docker exec -it dockerlab /bin/sh
     echo "Lab I environment started with container name lab1_env"
 }
