@@ -155,7 +155,7 @@ mysql_user="rehan"
 mysql_password="1234"
 mysql_db="siswa"
 
-docker exec -it nilaisql mysql -h "$mysql_host" -P 3307 -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_2 = '$total' WHERE id = '$student_id';"
+docker exec -it nilaisql mysql -h "$mysql_host" -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_2 = '$total' WHERE id = '$student_id';"
 
 # Verifikasi apakah query berhasil
 if [ $? -eq 0 ]; then
