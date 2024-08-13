@@ -2,7 +2,7 @@
 
 # Memuat dan menjalankan MySQL container
 docker load < /mysql.tar
-docker run -d --name nilaisql -e MYSQL_ROOT_PASSWORD=1234 -p 3306:3306 mysql
+docker run -d --name nilaisql -e MYSQL_ROOT_PASSWORD=1234 -p 3307:3306 mysql
 
 # Fungsi untuk memverifikasi apakah perintah yang diberikan sesuai dengan jawaban yang benar
 check_command() {
@@ -170,7 +170,7 @@ mysql_user="rehan"
 mysql_password="1234"
 mysql_db="siswa"
 
-docker exec -it nilaisql mysql -h "$mysql_host" -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_2 = '$total' WHERE id = '$student_id';"
+docker exec -it nilaisql mysql -h "$mysql_host" -P 3307 -u "$mysql_user" -p"$mysql_password" "$mysql_db" -e "UPDATE siswa SET Docker_Lab_2 = '$total' WHERE id = '$student_id';"
 
 
 echo "Hasil telah disimpan ke database."
