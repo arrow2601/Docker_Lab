@@ -13,6 +13,8 @@ start_lab_1() {
     docker exec dockerlab chmod +x /usr/local/bin/docker-lab-3-start
     docker exec dockerlab mv Docker_Lab/docker_lab_4.sh /usr/local/bin/docker-lab-4-start
     docker exec dockerlab chmod +x /usr/local/bin/docker-lab-4-start
+    docker exec dockerlab mv Docker_Lab/docker_lab_2_grading.sh /usr/local/bin/docker-lab-2-grade
+    docker exec dockerlab chmod +x /usr/local/bin/docker-lab-4-start
     docker exec -it dockerlab /bin/sh
     echo "Lab I environment started with container name lab1_env"
 }
