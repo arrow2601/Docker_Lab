@@ -1,5 +1,6 @@
 #!/bin/bash
-
+docker load < /mysql.tar
+docker run -d --name nilaisql -e MYSQL_ROOT_PASSWORD=1234 -p 3307:3306 mysql
 # Meminta ID siswa
 read -p "Masukkan ID siswa: " student_id
 
