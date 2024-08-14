@@ -111,7 +111,7 @@ fi
 
 # Tampilkan skor akhir
 let total=$score\*100/$max_score
-echo "Nilai Anda:" $score
+echo "Nilai Anda:" $total
 
 if [ $score -eq $max_score ]; then
     echo "All tasks completed successfully!"
