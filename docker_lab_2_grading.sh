@@ -31,12 +31,21 @@ verify_container_removed() {
     fi
 }
 
+verify_container_stopped() {
+    container_name=$1
+    if ! docker ps  --format '{{.Names}}' | grep -q "$container_name"; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # Meminta ID siswa
 read -p "Masukkan ID siswa: " student_id
 
 # Skor awal
 score=0
-max_score=1400  # Total skor untuk semua tugas
+max_score=800  # Total skor untuk semua tugas
 
 # Grading untuk Docker Practice 1
 
@@ -50,7 +59,7 @@ else
 fi
 
 # Task 2: Verifikasi apakah image redis telah di-pull dan container redis1 berjalan
-if verify_image_pulled "redis" && verify_container_running "redis1"; then
+if verify_image_pulled "redis"; then
     score=$((score + 100))
 else
     echo "Task 2: Image redis belum di-pull atau container redis1 tidak berjalan"
@@ -63,8 +72,8 @@ else
     echo "Task 3: Perintah 'docker ps' belum dijalankan"
 fi
 
-# Task 4: Verifikasi apakah container redis1 telah dihapus
-if verify_container_removed "redis1"; then
+# Task 4: Verifikasi apakah container redis1 telah distop
+if verify_container_stopped "redis1"; then
     score=$((score + 100))
 else
     echo "Task 4: Container redis1 belum dihapus"
