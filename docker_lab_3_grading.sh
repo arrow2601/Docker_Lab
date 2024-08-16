@@ -114,13 +114,14 @@ check_command_executed "2. Pull image ubuntu from Dockerhub" "docker pull ubuntu
 check_image_pulled "ubuntu" 50
 
 # Task 3: Running ubuntu container and access to the console
-check_command_executed "3. Running ubuntu container and access to the console" "docker run -it ubuntu" 100
+check_command_executed "3. Running ubuntu container and access to the console" "docker run -it --name ubuntu1 ubuntu" 100
 
 # Task 4: Run the ubuntu container and delete it when exiting
 check_command_executed "4. Run ubuntu container with --rm and delete on exit" "docker run -it --rm --name ubuntu2 ubuntu" 100
 
 # Tampilkan skor akhir
 let total=$score\*100/$max_score
+echo $score
 echo "Nilai Anda:" $total
 
 if [ $score -eq $max_score ]; then
