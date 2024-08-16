@@ -6,7 +6,7 @@ read -p "Masukkan ID siswa: " student_id
 
 # Skor awal
 score=0
-max_score=2100  # Total skor untuk semua tugas
+max_score=1800  # Total skor untuk semua tugas
 
 # Fungsi untuk memeriksa apakah perintah sudah dijalankan
 check_command_executed() {
